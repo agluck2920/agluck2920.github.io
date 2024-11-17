@@ -67,7 +67,7 @@ export default function Admin() {
   }
 
   function handlePageMove(configToUpdate: SingleConfig) {
-      let newConfig: any = {...config};
+      const newConfig: any = {...config};
       
       newConfig[configToUpdate.name] = {
         name: configToUpdate.name,
