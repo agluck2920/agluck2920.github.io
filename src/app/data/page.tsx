@@ -17,6 +17,8 @@ interface UserData {
   }
 }
 
+const BASE_URL = '/zealthy-coding-challenge';
+
 export default function Data() {
   
   const [userData, setUserData] = useState([]);
@@ -26,7 +28,7 @@ export default function Data() {
   }, []);
 
   async function fetchUserData() {
-      const response = await fetch('zealthy-coding-challenge/data/api');
+      const response = await fetch(`${BASE_URL}/data/api`);
 
       const data = await response.json();
 
