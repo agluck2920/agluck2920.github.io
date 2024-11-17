@@ -36,7 +36,7 @@ export async function POST(request: Request) {
 
         return Response.json({ adminConfig });
     } catch (e) {
-        console.error(e);
+        return Response.json({error: e});
     }
 }
 
@@ -49,6 +49,6 @@ export async function GET() {
             .findOne({ email: 'defaultAdminEmail@gmail.com' })
         return Response.json(adminConfig);
     } catch (e) {
-        console.error(e);
+        return Response.json({error: e});
     }
 }

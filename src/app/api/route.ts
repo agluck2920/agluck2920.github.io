@@ -33,7 +33,7 @@ export async function POST(request: Request) {
 
         return Response.json({ users });
     } catch (e) {
-        console.error(e);
+        return Response.json({error: e});
     }
 }
 
@@ -48,6 +48,6 @@ export async function GET(request: NextRequest) {
 
         return Response.json({user});
     } catch (e) {
-        console.error(e);
+        return Response.json({error: e});
     }
 }
