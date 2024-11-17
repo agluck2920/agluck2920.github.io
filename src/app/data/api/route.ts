@@ -1,5 +1,7 @@
 import clientPromise from "../../../lib/mongodb";
 
+export const dynamic = 'force-static';
+
 export async function GET() {
     try {
         const client = await clientPromise;
