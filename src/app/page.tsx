@@ -85,7 +85,7 @@ export default function Home() {
   }
 
   async function handleUpdateForm() {
-    const response = await fetch('/api', {
+    const response = await fetch('zealthy-coding-challenge/api', {
       method: 'POST',
       body: JSON.stringify({formData})
     });
@@ -94,7 +94,7 @@ export default function Home() {
   }
 
   async function fetchAdminConfig() {
-    const response = await fetch('/admin/api');
+    const response = await fetch('zealthy-coding-challenge/admin/api');
 
     const data = await response.json();
 
@@ -102,7 +102,7 @@ export default function Home() {
   }
 
   async function fetchUser(email: string) {
-    const response = await fetch('/api?' + new URLSearchParams({
+    const response = await fetch('zealthy-coding-challenge/api?' + new URLSearchParams({
       email: email
     }).toString());
 

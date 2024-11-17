@@ -26,7 +26,7 @@ export default function Data() {
   }, []);
 
   async function fetchUserData() {
-      const response = await fetch('/data/api');
+      const response = await fetch('zealthy-coding-challenge/data/api');
 
       const data = await response.json();
 
