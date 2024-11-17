@@ -1,0 +1,38 @@
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.submit {
+  background-color: #00531b;
+  margin-top: 10px;
+}
+
+.complete {
+  background-color: #00531b;
+}
+
+.continue {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  background-color: #00531b;
+  border: none;
+}
+
+.back {
+  background-color: #888888;
+  margin-top: 10px;
+  margin-right: 125px;
+}
+
