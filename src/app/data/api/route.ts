@@ -13,6 +13,6 @@ export async function GET() {
             .toArray();
         return Response.json(users);
     } catch (e) {
-       return Response.error();
+       return Response.json({error: e});
     }
 } 
