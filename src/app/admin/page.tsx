@@ -12,8 +12,6 @@ interface SingleConfig {
   currentPage: number
 }
 
-const BASE_URL = '/zealthy-coding-challenge';
-
 export default function Admin() {
   
   const [config, setAdminConfig] = useState<Config>();
@@ -50,7 +48,7 @@ export default function Admin() {
   }, [config]);
 
   async function fetchAdminConfig() {
-    const response = await fetch(`${BASE_URL}/admin/api`);
+    const response = await fetch(`/admin/api`);
 
     const data = await response.json();
 
@@ -58,7 +56,7 @@ export default function Admin() {
   }
 
   async function updateAdminConfig(configObject: Config) { 
-    const response = await fetch(`${BASE_URL}/admin/api`, {
+    const response = await fetch(`/admin/api`, {
       method: 'POST',
       body: JSON.stringify(configObject)
     });

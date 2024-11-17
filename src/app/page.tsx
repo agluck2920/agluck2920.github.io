@@ -9,8 +9,6 @@ import ProgressBar from '../components/ProgressBar/ProgressBar';
 import useDebounce from '../hooks/useDebounce';
 import { Config, FormData } from '../types/types';
 
-const BASE_URL = '/zealthy-coding-challenge';
-
 export default function Home() {
 
   const [page, setPage] =  useState(1);
@@ -87,7 +85,7 @@ export default function Home() {
   }
 
   async function handleUpdateForm() {
-    const response = await fetch(`${BASE_URL}/api`, {
+    const response = await fetch(`/api`, {
       method: 'POST',
       body: JSON.stringify({formData})
     });
@@ -96,7 +94,7 @@ export default function Home() {
   }
 
   async function fetchAdminConfig() {
-    const response = await fetch(`${BASE_URL}/admin/api`);
+    const response = await fetch(`/admin/api`);
 
     const data = await response.json();
 
@@ -104,7 +102,7 @@ export default function Home() {
   }
 
   async function fetchUser(email: string) {
-    const response = await fetch(`${BASE_URL}/api?` + new URLSearchParams({
+    const response = await fetch(`/api?` + new URLSearchParams({
       email: email
     }).toString());
 
