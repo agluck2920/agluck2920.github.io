@@ -73,6 +73,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Print Secret
+        run: |
+          echo "URI: $MONGODB_URI"
+        env: 
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
         env: 
