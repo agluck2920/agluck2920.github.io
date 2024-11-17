@@ -7,7 +7,7 @@ interface Props {
   disabled?: boolean
 }
 
-export default function BirthdateSelector(props: Props) {
+export default function DateOfBirthSelector(props: Props) {
 
   const {value, onChange, disabled} = props;
 

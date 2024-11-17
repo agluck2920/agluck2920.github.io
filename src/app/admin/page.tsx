@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import AddressForm from '../../components/AddressForm/AddressForm';
-import BirthdateSelector from '../../components/BirthdateSelector/BirthdateSelector';
+import DateOfBirthSelector from '../../components/DateOfBirthSelector/DateOfBirthSelector';
 import { Config } from '../../types/types';
 
 interface SingleConfig {
@@ -19,7 +19,7 @@ export default function Admin() {
   const [pageComponentCount, setPageComponentCount] = useState({
       pageTwo: 0,
       pageThree: 0
-  })
+  });
 
   useEffect(() => {
     fetchAdminConfig();
@@ -81,7 +81,7 @@ export default function Admin() {
     if (name === 'aboutMe' && (currentPage === headerPage)) {
       return <AboutMe disabled/>
     } else if (name === 'dateOfBirth' && (currentPage === headerPage)) {
-      return <BirthdateSelector disabled/>
+      return <DateOfBirthSelector disabled/>
     } else if (name === 'address' && (currentPage === headerPage)) {
       return <AddressForm disabled/>
     } else {

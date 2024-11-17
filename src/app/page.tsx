@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './page.module.css';
 import AboutMe from '../components/AboutMe/AboutMe';
 import AddressForm from '../components/AddressForm/AddressForm';
-import BirthdateSelector from '../components/BirthdateSelector/BirthdateSelector';
+import DateOfBirthSelector from '../components/DateOfBirthSelector/DateOfBirthSelector';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import useDebounce from '../hooks/useDebounce';
 import { Config, FormData } from '../types/types';
@@ -126,7 +126,7 @@ export default function Home() {
     if (name === 'aboutMe' && (currentPage === headerPage)) {
       return <AboutMe value={formData.aboutMeText} onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData({...formData, aboutMeText: e.target.value})}/>
     } else if (name === 'dateOfBirth' && (currentPage === headerPage)) {
-      return <BirthdateSelector value={formData.dob} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({...formData, dob: e.target.value})}/>
+      return <DateOfBirthSelector value={formData.dob} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({...formData, dob: e.target.value})}/>
     } else if (name === 'address' && (currentPage === headerPage)) {
       return <AddressForm data={formData} onChange={setFormData}/>
     } else {
